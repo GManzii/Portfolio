@@ -7,14 +7,13 @@
 
 ---
 
-### [→ ACESSAR TERMINAL / PORTFÓLIO](https://github.com/GManzii) 
-*(Substitua este link pelo endereço do seu site publicado, se houver)*
+### [→ ACESSAR PORTFÓLIO]([https://github.com/GManzii](https://g-manzii-portfolio.vercel.app/index.html) 
 
 ---
 
-### // sobre o projeto
+### // sobre o p
 
-Interface de terminal pessoal e central de portfólio desenvolvida totalmente do zero com **HTML5, CSS3 e JavaScript Vanilla** — livre de frameworks ou dependências externas. 
+Site de portdólio produzido com **HTML5, CSS3 e JavaScript Vanilla** 
 
 O projeto adota uma estética *industrial ciberpunk/high-tech*, utilizando uma malha de pontos de fundo, pontos elétricos pulsantes via CSS puro, e um sistema reativo de mudança de estado (variáveis globais) que gerencia de forma instantânea a interface do usuário.
 
@@ -29,5 +28,5 @@ O projeto adota uma estética *industrial ciberpunk/high-tech*, utilizando uma m
 ```text
 arquivos/
 ├── index.html        # Central, biografia, stack de ferramentas e contatos
-├── projetos.html     # Repositório de projetos e badges tecnológicas
-└── certificados.html # Linha do tempo de certificações profissionais
+├── projetos.html     # Repositório de projetos tech
+└── certificados.html # Lista de certificações profissionais
