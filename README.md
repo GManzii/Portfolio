@@ -11,7 +11,7 @@
 
 ---
 
-### // sobre o p
+### // sobre
 
 Site de portdólio produzido com **HTML5, CSS3 e JavaScript Vanilla** 
 
