@@ -1,0 +1,610 @@
+:root {
+    --fundo-principal: #121318;
+    --fundo-modulo: #1a1c23;
+    --texto-vibrante: #00f0ff; 
+    --texto-principal: #e2e8f0; 
+    --texto-suave: #94a3b8;
+    --bordas-tech: #2e3244; 
+    --tag-bg: #222533;
+    --status-active: #39ff14; 
+    
+    --fonte-mono: 'Fira Code', monospace;
+    --fonte-sans: 'Inter', sans-serif;
+}
+
+body.light-mode {
+    --fundo-principal: #f1f5f9;
+    --fundo-modulo: #ffffff;
+    --texto-vibrante: #7c3aed; 
+    --texto-principal: #0f172a;
+    --texto-suave: #475569;
+    --bordas-tech: #cbd5e1;
+    --tag-bg: #e2e8f0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--fundo-principal);
+    color: var(--texto-principal);
+    font-family: var(--fonte-sans);
+    line-height: 1.7;
+    padding-top: 100px; 
+    position: relative;
+    overflow-x: hidden;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Malha de fundo simulando papel milimetrado/pontos */
+.background-pontos {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(var(--bordas-tech) 1px, transparent 1px);
+    background-size: 24px 24px;
+    opacity: 0.4;
+    z-index: -2;
+    pointer-events: none;
+}
+
+/* Pontos elétricos azuis pulsantes (Item 2) */
+.ponto-luz {
+    position: absolute;
+    width: 4px; /* Um pouquinho maior para reter mais luz */
+    height: 4px;
+    background-color: var(--texto-vibrante);
+    border-radius: 50%;
+    animation: pulsaPonto 4s infinite ease-in-out;
+    
+    /* Brilho neon acumulado muito mais forte */
+    box-shadow: 0 0 8px var(--texto-vibrante), 
+                0 0 16px var(--texto-vibrante), 
+                0 0 24px var(--texto-vibrante);
+}
+
+.ponto-luz:nth-child(2) { animation-delay: 1s; }
+.ponto-luz:nth-child(3) { animation-delay: 2.5s; }
+.ponto-luz:nth-child(4) { animation-delay: 1.8s; }
+/* Delays adicionais para os novos pontos não piscarem todos juntos */
+.ponto-luz:nth-child(5) { animation-delay: 0.5s; }
+.ponto-luz:nth-child(7) { animation-delay: 3s; }
+.ponto-luz:nth-child(10) { animation-delay: 2.2s; }
+
+body.light-mode .ponto-luz {
+    display: none; 
+}
+
+@keyframes pulsaPonto {
+    /* Mudei de 0.1 para 0.4 para a luz nunca sumir totalmente */
+    0%, 100% { 
+        opacity: 0.4; 
+        transform: scale(0.9); 
+    }
+    /* No pico, ela explode o brilho expandindo o tamanho */
+    50% { 
+        opacity: 1; 
+        transform: scale(1.5); 
+    }
+}
+
+.container-pagina {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 60px 20px 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px; 
+    z-index: 5;
+}
+
+.nav-principal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: var(--fundo-modulo);
+    border-bottom: 2px solid var(--bordas-tech);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 32px;
+    z-index: 1000;
+}
+
+.nav-logo {
+    font-family: var(--fonte-mono);
+    font-weight: 600;
+    color: var(--texto-vibrante);
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 32px; 
+}
+
+.nav-links a {
+    font-family: var(--fonte-mono);
+    font-size: 14px;
+    color: var(--texto-suave);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover, 
+.nav-links a.active {
+    color: var(--texto-vibrante);
+}
+
+.btn-toggle-tema {
+    font-family: var(--fonte-mono);
+    font-size: 12px;
+    background: transparent;
+    border: 1px solid var(--bordas-tech);
+    color: var(--texto-principal);
+    padding: 8px 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+}
+
+.btn-toggle-tema:hover {
+    border-color: var(--texto-vibrante);
+    color: var(--texto-vibrante);
+}
+
+.status-icon {
+    width: 8px;
+    height: 8px;
+    background-color: var(--status-active);
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.modulo-tech {
+    background-color: var(--fundo-modulo);
+    border: 2px solid var(--bordas-tech);
+    padding: 40px; 
+    position: relative;
+    backdrop-filter: blur(2px);
+}
+
+.tag-modulo {
+    position: absolute;
+    top: -12px;
+    left: 24px;
+    background-color: var(--fundo-principal);
+    border: 1px solid var(--bordas-tech);
+    padding: 2px 10px;
+    font-family: var(--fonte-mono);
+    font-size: 11px;
+    color: var(--texto-vibrante);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.intro-grid {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.intro-foto-container {
+    position: relative;
+    flex-shrink: 0;
+    padding: 4px;
+}
+
+.intro-foto-container::before {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--texto-vibrante);
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+.intro-foto {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border: 2px solid var(--bordas-tech);
+    background-color: var(--fundo-principal);
+    display: block;
+}
+
+.intro-bloco:hover .intro-foto-container::before {
+    top: 6px;
+    left: 6px;
+}
+
+.intro-texto {
+    flex-grow: 1;
+}
+
+@media (max-width: 650px) {
+    .intro-grid {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+    }
+}
+
+.titulo-hello {
+    font-family: var(--fonte-mono);
+    font-size: 14px;
+    color: var(--texto-suave);
+    margin-bottom: 2px;
+}
+
+.container-typing {
+    display: inline-block;
+    margin-bottom: 6px;
+}
+
+.titulo-nome {
+    font-size: 34px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: var(--texto-principal);
+    font-family: var(--fonte-sans);
+    white-space: nowrap;
+    overflow: hidden; 
+    border-right: 3px solid var(--texto-vibrante); 
+    width: 0;
+    animation: 
+        escrevendo 2.5s steps(14) forwards,
+        cursorPiscando 0.8s step-end infinite;
+}
+
+@keyframes escrevendo {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes cursorPiscando {
+    from, to { border-color: transparent; }
+    50% { border-color: var(--texto-vibrante); }
+}
+
+.subtitulo {
+    font-family: var(--fonte-mono);
+    font-size: 13px;
+    color: var(--texto-vibrante);
+    margin-bottom: 20px;
+}
+
+.bio-curta {
+    color: var(--texto-suave);
+    font-size: 15px;
+}
+
+.bio-curta em {
+    color: var(--texto-principal);
+    font-style: normal;
+    font-weight: 600;
+}
+
+.skills-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.categoria-titulo {
+    font-family: var(--fonte-mono);
+    font-size: 14px;
+    color: var(--texto-principal);
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag-item {
+    font-family: var(--fonte-mono);
+    font-size: 13px;
+    background-color: var(--tag-bg);
+    border: 1px solid var(--bordas-tech);
+    padding: 6px 14px;
+    color: var(--texto-principal);
+    transition: all 0.2s;
+    
+    /* Alinhamento flex para suportar ícones SVG inline */
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.tag-item:hover {
+    border-color: var(--texto-vibrante);
+    color: var(--texto-vibrante);
+    background-color: var(--fundo-principal);
+}
+
+/* Controle restrito de dimensões e paleta para os símbolos */
+.tech-icon {
+    width: 12px !important;    /* Força o tamanho compacto horizontal */
+    height: 12px !important;   /* Força o tamanho compacto vertical */
+    max-width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    fill: currentColor;        /* Faz o ícone adotar a cor dinâmica do texto da tag */
+}
+
+/* Grid de Contato */
+.contato-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.link-contato {
+    font-family: var(--fonte-mono);
+    color: var(--texto-principal);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    transition: color 0.2s;
+}
+
+.link-contato:hover {
+    color: var(--texto-vibrante);
+}
+
+.rodape-industrial {
+    margin-top: 60px;
+    border-top: 2px solid var(--bordas-tech);
+    padding: 32px;
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--fonte-mono);
+    font-size: 11px;
+    color: var(--texto-suave);
+    background-color: var(--fundo-modulo);
+}
+
+.lang-en {
+    display: none;
+}
+
+body.lang-en-active .lang-pt {
+    display: none;
+}
+
+body.lang-en-active .lang-en {
+    display: inline; 
+}
+
+body.lang-en-active div.lang-en,
+body.lang-en-active p.lang-en {
+    display: block;
+}
+
+.nav-controles {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.btn-toggle-lang {
+    font-family: var(--fonte-mono);
+    font-size: 12px;
+    background: transparent;
+    border: 1px solid var(--bordas-tech);
+    color: var(--texto-principal);
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-toggle-lang:hover {
+    border-color: var(--texto-vibrante);
+    color: var(--texto-vibrante);
+}
+
+.projeto-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px dashed var(--bordas-tech);
+    padding-bottom: 14px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.projeto-titulo {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--texto-principal);
+}
+
+.projeto-tech-badge {
+    font-family: var(--fonte-mono);
+    font-size: 12px;
+    color: var(--texto-vibrante);
+    background-color: var(--tag-bg);
+    border: 1px solid var(--bordas-tech);
+    padding: 4px 10px;
+}
+
+.projeto-descricao {
+    font-size: 15px;
+    color: var(--texto-suave);
+    margin-bottom: 24px;
+    text-align: justify;
+}
+
+.btn-projeto {
+    display: inline-block;
+    font-family: var(--fonte-mono);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--fundo-principal);
+    background-color: var(--texto-vibrante);
+    border: 2px solid var(--texto-vibrante);
+    padding: 8px 20px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.btn-projeto:hover {
+    background-color: transparent;
+    color: var(--texto-vibrante);
+}
+
+body.light-mode .btn-projeto {
+    color: #ffffff;
+}
+body.light-mode .btn-projeto:hover {
+    color: var(--texto-vibrante);
+}
+
+/* ==========================================================================
+   ESTILOS ADICIONAIS: CERTIFICADOS (MINIMALISTA & ESPAÇADO)
+   ========================================================================== */
+.certificados-header {
+    margin-bottom: 64px; 
+}
+
+.titulo-certificados {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--texto-principal);
+    margin-top: 8px;
+    letter-spacing: -0.5px;
+}
+
+.lista-certificados {
+    display: flex;
+    flex-direction: column;
+    gap: 0; 
+}
+
+.cert-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px 0; 
+    border-bottom: 1px dashed var(--bordas-tech);
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.cert-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.cert-index {
+    font-family: var(--fonte-mono);
+    font-size: 14px;
+    color: var(--texto-suave);
+}
+
+.cert-nome {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--texto-principal);
+}
+
+.cert-action-btn {
+    font-family: var(--fonte-mono);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--fundo-principal);
+    background-color: var(--texto-vibrante);
+    border: 1px solid var(--texto-vibrante);
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.cert-action-btn:hover {
+    background-color: transparent;
+    color: var(--texto-vibrante);
+}
+
+.cert-action-btn.link-desabilitado {
+    background-color: transparent;
+    border-color: var(--bordas-tech);
+    color: var(--texto-suave);
+    pointer-events: none; 
+    opacity: 0.6;
+}
+
+body.light-mode .cert-action-btn:not(.link-desabilitado) {
+    color: #ffffff;
+}
+body.light-mode .cert-action-btn:not(.link-desabilitado):hover {
+    color: var(--texto-vibrante);
+}
+
+@media (max-width: 600px) {
+    .cert-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 24px 0;
+    }
+    
+    .cert-action-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+/* ==========================================================================
+   AJUSTES DOS ÍCONES DAS TAGS
+   ========================================================================== */
+
+/* Alinha o texto com o ícone nas tags */
+.tag-item {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+}
+
+/* Controla o formato global dos SVGs */
+.tech-icon {
+    width: 14px !important;   /* Aumentado levemente para 14px para dar mais nitidez às letras */
+    height: 14px !important;
+    max-width: 100% !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+    fill: currentColor !important; 
+    flex-shrink: 0 !important;
+}
+
+/* O PULOR DO GATO: Evita que o preenchimento do CSS pinte as letras internas de Ps, Pr, C */
+.tech-icon text {
+    font-family: 'Inter', 'Arial Black', sans-serif !important;
+    fill: var(--fundo-modulo, #1a1c23) !important; /* Faz o texto interno herdar a cor de fundo */
+    font-weight: 900 !important;
+}
+
+/* Ajuste específico para quando o usuário passar o mouse por cima (Hover) */
+.tag-item:hover .tech-icon text {
+    fill: var(--fundo-principal, #121318) !important;
+}

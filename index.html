@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G.Manzi // Central</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-cyber">
+
+    <div class="background-pontos">
+        <span class="ponto-luz" style="top: 10%; left: 8%;"></span>
+        <span class="ponto-luz" style="top: 18%; left: 75%;"></span>
+        <span class="ponto-luz" style="top: 35%; left: 15%;"></span>
+        <span class="ponto-luz" style="top: 42%; left: 45%;"></span> 
+        <span class="ponto-luz" style="top: 48%; left: 90%;"></span>
+        <span class="ponto-luz" style="top: 60%; left: 5%;"></span>
+        <span class="ponto-luz" style="top: 65%; left: 40%;"></span>
+        <span class="ponto-luz" style="top: 72%; left: 80%;"></span>
+        <span class="ponto-luz" style="top: 88%; left: 25%;"></span>
+        <span class="ponto-luz" style="top: 90%; left: 92%;"></span>
+        <span class="ponto-luz" style="top: 93%; left: 65%;"></span>
+    </div>
+
+    <nav class="nav-principal">
+        <div class="nav-logo">G.MANZI.dev //</div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">HOME</a></li>
+            <li><a href="projetos.html">PROJETOS</a></li>
+            <li><a href="certificados.html">CERTIFICADOS</a></li>
+        </ul>
+        
+        <div class="nav-controles">
+            <button class="btn-toggle-lang" onclick="alternarIdioma()">
+                <span class="lang-pt">[ EN ]</span>
+                <span class="lang-en">[ PT ]</span>
+            </button>
+            
+            <button class="btn-toggle-tema" onclick="alternarTema()" aria-label="Alternar Modo de Interface">
+                <span class="status-icon"></span> INTERFACE
+            </button>
+        </div>
+    </nav>
+
+    <main class="container-pagina">
+        
+        <section class="modulo-tech intro-bloco">
+            <div class="tag-modulo">SYS_STATUS: ACTIVE</div>
+            <div class="intro-grid">
+                <div class="intro-foto-container">
+                    <img src="suafoto.jpg" alt="Gabriela Manzi" class="intro-foto">
+                </div>
+                <div class="intro-texto">
+                    <h1 class="titulo-hello">HELLO, WORLD!_</h1>
+                    <div class="container-typing">
+                        <h2 class="titulo-nome">Gabriela Manzi</h2>
+                    </div>
+                    
+                    <p class="subtitulo">
+                        <span class="lang-pt">Ciência da Computação @ CESAR School // 1º Período</span>
+                        <span class="lang-en">Computer Science @ CESAR School // 1st Semester</span>
+                    </p>
+                    
+                    <p class="bio-curta">
+                        <span class="lang-pt">
+                            Minha paixão por tecnologia é de longa data — aos 12 anos já configurava meus primeiros servidores de Minecraft. Atualmente na Ciência da Computação, busco aplicar minha lógica em projetos práticos e automações, com foco em eficiência e rápida <b>adaptabilidade</b> a novas tecnologias. Além disso, tenho interesse em áreas como forense digital e game development, embora eu tenha curiosidade e disposição para aprender em diversos campos da tecnologia.  </span>
+                        <span class="lang-en">
+                            My passion for technology is long-standing — at 12 years old, I was already configuring my first Minecraft servers. Currently studying Computer Science, I aim to apply my logical reasoning to practical projects and automation, with a focus on efficiency and quick adaptability to new technologies. Additionally, I am interested in areas such as digital forensics and game development, although I have the curiosity and willingness to learn across various fields of technology.</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="modulo-tech">
+            <div class="tag-modulo">
+                <span class="lang-pt">Minhas_ferramentas</span>
+                <span class="lang-en">My_tools</span>
+            </div>
+            
+            <div class="skills-wrapper">
+                <div class="skills-categoria">
+                    <h3 class="categoria-titulo">// Back-End</h3>
+                    <div class="tags-container">
+                        <span class="tag-item">
+                            <svg class="tech-icon" viewBox="0 0 24 24"><path d="M12.002 2c-5.523 0-5 2.5-5 2.5v2h5v1h-7s-3 0-3 4.5 2.5 4.5 2.5 4.5h1.5v-2c0-.002 0-2.5 2.5-2.5h5s2.5 0 2.5-2.5v-5s.5-2.5-4-2.5zm-2.5 1.75a.75.75 0 1 1 0 1.5.75.75 0 0 1 0-1.5zm2.5 18.25c5.523 0 5-2.5 5-2.5v-2h-5v-1h7s3 0 3-4.5-2.5-4.5-2.5-4.5h-1.5v2c0 .002 0 2.5-2.5 2.5h-5s-2.5 0-2.5 2.5v5s-.5 2.5 4 2.5zm2.5-1.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5z"/></svg>
+                            Python
+                        </span>
+                        <span class="tag-item">
+                            <svg class="tech-icon" viewBox="0 0 24 24">
+                                <polygon points="12,1.5 19.5,4.5 22.5,12 19.5,19.5 12,22.5 4.5,19.5 1.5,12 4.5,4.5" />
+                                <text x="6.5" y="16.5" font-size="13">C</text>
+                            </svg>
+                            C / C++
+                        </span>
+                    </div>
+                </div>
+
+                <div class="skills-categoria">
+                    <h3 class="categoria-titulo">// Front-End</h3>
+                    <div class="tags-container">
+                        <span class="tag-item">
+                            <svg class="tech-icon" viewBox="0 0 24 24"><path d="M12 2L3 5v12l9 5 9-5V5zm4.83 14h-1.85v-1.12c-.22.4-.73 1.25-1.95 1.25-1.32 0-2-.95-2-2.18v-3.78h1.85v3.42c0 .6.22 1 .84 1 .6 0 .86-.4.86-1v-3.42h1.85zm-4.7-4.14c0 .88-.63 1.14-1.32 1.34l-.64.2c-.37.1-.47.24-.47.45s.16.38.53.38A1 1 0 0 0 11 14v1.27a2.53 2.53 0 0 1-1.95.14c-1.1-.3-1.46-1-1.46-1.77V13h1.8v.35c0 .28.1.4.47.4.3 0 .43-.13.43-.32a3.31 3.31 0 0 0-.66-.46c-.73-.24-1.63-.58-1.63-1.62v-.12c0-.84.66-1.4 1.77-1.4a2 2 0 0 1 1.76.92l-.93.73a.85.85 0 0 0-.74-.46c-.34 0-.46.16-.46.32v.07c0 .25.2.35.53.46l.54.17c.83.26 1.63.54 1.63 1.6z"/></svg>
+                            JavaScript
+                        </span>
+                        <span class="tag-item">
+                            <svg class="tech-icon" viewBox="0 0 24 24"><path d="M12 2L3 5v12l9 5 9-5V5zm4 7h-5.27l.18 1.83H16l-.37 3.86L12 15.74l-3.63-1.05-.24-2.52h1.83l.11 1.17L12 13.91l1.92-.55.2-2.19H8.02L7.5 5.17h9z"/></svg>
+                            HTML5 / CSS3
+                        </span>
+                    </div>
+                </div>
+
+                <div class="skills-categoria">
+                    <h3 class="categoria-titulo">// Tools</h3>
+                    <div class="tags-container">
+                        <span class="tag-item">
+                            <svg class="tech-icon" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                            Git / GitHub
+                        </span>
+                        <span class="tag-item">
+                            <svg class="tech-icon" viewBox="0 0 24 24"><path d="M7.5 7C4.46 7 2 9.24 2 12s2.46 5 5.5 5c2.04 0 3.83-1 4.88-2.51l.12-.18.12.18C13.67 16 15.46 17 17.5 17c3.04 0 5.5-2.24 5.5-5s-2.46-5-5.5-5c-2.04 0-3.83 1-4.88 2.51l-.12.18-.12-.18C10.33 8 8.54 7 7.5 7zm0 2c1.94 0 3.5 1.34 3.5 3s-1.56 3-3.5 3S4 13.66 4 12s1.56-3 3.5-3zm10 0c1.94 0 3.5 1.34 3.5 3s-1.56 3-3.5 3-3.5-1.34-3.5-3 1.56-3 3.5-3zM6 11v2h3v-2H6zm10 0v2h2v-2h-2zm1 0h1v-1h-1v1z"/></svg>
+                            Arduino
+                        </span>
+                        <span class="tag-item">
+                            <svg class="tech-icon" viewBox="0 0 24 24" style="flex-shrink:0;">
+                                <path d="M4 3h3v3H4zm13 0h3v3h-3zM2 8h20v6H2zm4 16h3v3H6zm11-1v3h3v-3h-3zM4 11h2v3H4zm16 0h2v3h-2zm-3-4h1v1h-1zM5 7h1v1H5zm6-5h2v2h-2zm1-2h2v1h-2z" stroke="currentColor" fill="none" stroke-width="1.5"/>
+                            </svg>
+                            Bitsy
+                        </span>
+                        <span class="tag-item">
+                            <svg class="tech-icon" viewBox="0 0 24 24">
+                                <rect x="2" y="2" width="20" height="20" rx="3" />
+                                <text x="4.5" y="16.5" font-size="12">Ps</text>
+                            </svg>
+                            Photoshop
+                        </span>
+                        <span class="tag-item">
+                            <svg class="tech-icon" viewBox="0 0 24 24"><path d="M0 0v24h24V0H0zm9 16.5H7.2l-.5-1.6H4.3l-.5 1.6H1.6L5 7h2.1l2.3 9.5zm7.5 0h-2.1v-1.4c-.4.6-1.1 1.5-2.3 1.5-1.5 0-2.3-1.2-2.3-3V9.1h2.1v4c0 1 .4 1.5 1.1 1.5.8 0 1.4-.7 1.4-1.7V9.1h2.1v7.4zM5.5 9L4.7 12.3h1.7L5.5 9z"/></svg>
+                            Illustrator
+                        </span>
+                        <span class="tag-item">
+                            <svg class="tech-icon" viewBox="0 0 24 24">
+                                <rect x="2" y="2" width="20" height="20" rx="3" />
+                                <text x="5" y="16.5" font-size="12">Pr</text>
+                            </svg>
+                            Premiere
+                        </span>
+                    </div>
+                </div>
+
+                <div class="skills-categoria">
+                    <h3 class="categoria-titulo">// Soft_Skills</h3>
+                    
+                    <div class="tags-container lang-pt">
+                        <span class="tag-item">Adaptação Rápida</span>
+                        <span class="tag-item">Facilidade em aprender</span>
+                        <span class="tag-item">Raciocínio lógico</span>
+                        <span class="tag-item">Trabalho em equipe</span>
+                        <span class="tag-item">Inglês Avançado</span>
+                    </div>
+                    
+                    <div class="tags-container lang-en">
+                        <span class="tag-item">Fast Adaptation</span>
+                        <span class="tag-item">Quick Learner</span>
+                        <span class="tag-item">Logical Reasoning</span>
+                        <span class="tag-item">Teamwork</span>
+                        <span class="tag-item">Advanced English</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="modulo-tech">
+            <div class="tag-modulo">
+                <span class="lang-pt">Canais_De_Comunicação</span>
+                <span class="lang-en">Contact_Channels</span>
+            </div>
+            <div class="contato-grid">
+                <a href="https://github.com/GManzii" target="_blank" rel="noopener" class="link-contato">GITHUB_</a>
+                <a href="https://www.linkedin.com/in/gabriela-manzi/" target="_blank" rel="noopener" class="link-contato">LINKEDIN_</a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=gabrielamanzicorreia@gmail.com" target="_blank" rel="noopener" class="link-contato">EMAIL_</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="rodape-industrial">
+        <span class="cod-id">GMANZII.DEV v1.2.0</span>
+        <span class="copyright">© 2026 // RECIFE - PE</span>
+    </footer>
+
+    <script>
+        function alternarTema() {
+            document.body.classList.toggle("light-mode");
+            const isLight = document.body.classList.contains("light-mode");
+            localStorage.setItem("portfolio-theme", isLight ? "light" : "cyber");
+        }
+
+        function alternarIdioma() {
+            document.body.classList.toggle("lang-en-active");
+            const isEn = document.body.classList.contains("lang-en-active");
+            localStorage.setItem("portfolio-lang", isEn ? "en" : "pt");
+        }
+
+        (function() {
+            const temaSalvo = localStorage.getItem("portfolio-theme");
+            if (temaSalvo === "light") {
+                document.body.classList.add("light-mode");
+            }
+            const idiomaSalvo = localStorage.getItem("portfolio-lang");
+            if (idiomaSalvo === "en") {
+                document.body.classList.add("lang-en-active");
+            }
+        })();
+    </script>
+</body>
+</html>
